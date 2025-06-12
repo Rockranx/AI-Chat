@@ -1,0 +1,595 @@
+@import "tailwindcss";
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/55c55f0601d81cf3-s.woff2) format("woff2");
+  unicode-range:
+    u+0460-052f, u+1c80-1c8a, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/26a46d62cd723877-s.woff2) format("woff2");
+  unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/97e0cb1ae144a2a9-s.woff2) format("woff2");
+  unicode-range: u+1f??;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/581909926a08bbc8-s.woff2) format("woff2");
+  unicode-range:
+    u+0370-0377, u+037a-037f, u+0384-038a, u+038c, u+038e-03a1, u+03a3-03ff;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/df0a9ae256c0569c-s.woff2) format("woff2");
+  unicode-range:
+    u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1,
+    u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329,
+    u+1ea0-1ef9, u+20ab;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/6d93bde91c0c2823-s.woff2) format("woff2");
+  unicode-range:
+    u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7, u+02dd-02ff, u+0304,
+    u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab,
+    u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../media/a34f9d1faa5f3315-s.p.woff2) format("woff2");
+  unicode-range:
+    u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304,
+    u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215,
+    u+feff, u+fffd;
+}
+@font-face {
+  font-family: Inter Fallback;
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.12%;
+}
+.__className_d65c78 {
+  font-family:
+    Inter,
+    Inter Fallback;
+  font-style: normal;
+}
+/** Used to define the position of the ToastContainer **/
+.Toastify__toast-container {
+  top: 70px;
+  right: 10px;
+}
+.Toastify__toast-theme--light {
+  background: hsla(var(--theme-primary), 0.16);
+  box-shadow: 0 4px 30px hsla(var(--theme-primary), 0.1);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border: 1px solid hsla(var(--theme-primary), 0.13);
+  transition: all 0.3s ease;
+}
+.Toastify__progress-bar {
+  background: hsl(var(--theme-calm));
+}
+.Toastify__progress-bar--rtl {
+  background: red;
+}
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
+  background: hsl(var(--theme-calm));
+}
+
+/* From Uiverse.io by 00Kubi */
+.neon-checkbox {
+  --primary: hsl(var(--theme-primary));
+  --primary-dark: hsl(var(--theme-primary) / 0.8);
+  --primary-light: hsl(var(--theme-primary) / 0.4);
+  --size: 17px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.neon-checkbox input {
+  display: none;
+}
+
+.neon-checkbox__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.neon-checkbox__box {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  border: 2px solid var(--primary-dark);
+  transition: all 0.4s ease;
+}
+
+.neon-checkbox__check-container {
+  position: absolute;
+  inset: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neon-checkbox__check {
+  width: 80%;
+  height: 80%;
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-checkbox__glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: var(--primary);
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.2);
+  transition: all 0.4s ease;
+}
+
+.neon-checkbox__borders {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.neon-checkbox__borders span {
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.neon-checkbox__borders span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  animation: borderFlow1 2s linear infinite;
+}
+
+.neon-checkbox__borders span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 1px;
+  height: 40px;
+  animation: borderFlow2 2s linear infinite;
+}
+
+.neon-checkbox__borders span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  animation: borderFlow3 2s linear infinite;
+}
+
+.neon-checkbox__borders span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 1px;
+  height: 40px;
+  animation: borderFlow4 2s linear infinite;
+}
+
+.neon-checkbox__particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 6px var(--primary);
+}
+
+.neon-checkbox__rings {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+}
+
+.neon-checkbox__rings .ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  opacity: 0;
+  transform: scale(0);
+}
+
+.neon-checkbox__sparks span {
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  opacity: 0;
+}
+
+/* Hover Effects */
+.neon-checkbox:hover .neon-checkbox__box {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* Checked State */
+.neon-checkbox input:checked ~ .neon-checkbox__frame .neon-checkbox__box {
+  border-color: var(--primary);
+  background: rgba(0, 255, 170, 0.1);
+}
+
+.neon-checkbox input:checked ~ .neon-checkbox__frame .neon-checkbox__check {
+  stroke-dashoffset: 0;
+  transform: scale(1.1);
+}
+
+.neon-checkbox input:checked ~ .neon-checkbox__frame .neon-checkbox__glow {
+  opacity: 0.2;
+}
+
+.neon-checkbox
+  input:checked
+  ~ .neon-checkbox__frame
+  .neon-checkbox__borders
+  span {
+  opacity: 1;
+}
+
+/* Particle Animations */
+.neon-checkbox
+  input:checked
+  ~ .neon-checkbox__frame
+  .neon-checkbox__particles
+  span {
+  animation: particleExplosion 0.6s ease-out forwards;
+}
+
+.neon-checkbox
+  input:checked
+  ~ .neon-checkbox__frame
+  .neon-checkbox__rings
+  .ring {
+  animation: ringPulse 0.6s ease-out forwards;
+}
+
+.neon-checkbox
+  input:checked
+  ~ .neon-checkbox__frame
+  .neon-checkbox__sparks
+  span {
+  animation: sparkFlash 0.6s ease-out forwards;
+}
+
+/* Animations */
+@keyframes borderFlow1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes borderFlow2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes borderFlow3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes borderFlow4 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes particleExplosion {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+        calc(-50% + var(--x, 20px)),
+        calc(-50% + var(--y, 20px))
+      )
+      scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkFlash {
+  0% {
+    transform: rotate(var(--r, 0deg)) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--r, 0deg)) translateX(30px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Particle Positions */
+.neon-checkbox__particles span:nth-child(1) {
+  --x: 25px;
+  --y: -25px;
+}
+.neon-checkbox__particles span:nth-child(2) {
+  --x: -25px;
+  --y: -25px;
+}
+.neon-checkbox__particles span:nth-child(3) {
+  --x: 25px;
+  --y: 25px;
+}
+.neon-checkbox__particles span:nth-child(4) {
+  --x: -25px;
+  --y: 25px;
+}
+.neon-checkbox__particles span:nth-child(5) {
+  --x: 35px;
+  --y: 0px;
+}
+.neon-checkbox__particles span:nth-child(6) {
+  --x: -35px;
+  --y: 0px;
+}
+.neon-checkbox__particles span:nth-child(7) {
+  --x: 0px;
+  --y: 35px;
+}
+.neon-checkbox__particles span:nth-child(8) {
+  --x: 0px;
+  --y: -35px;
+}
+.neon-checkbox__particles span:nth-child(9) {
+  --x: 20px;
+  --y: -30px;
+}
+.neon-checkbox__particles span:nth-child(10) {
+  --x: -20px;
+  --y: 30px;
+}
+.neon-checkbox__particles span:nth-child(11) {
+  --x: 30px;
+  --y: 20px;
+}
+.neon-checkbox__particles span:nth-child(12) {
+  --x: -30px;
+  --y: -20px;
+}
+
+/* Spark Rotations */
+.neon-checkbox__sparks span:nth-child(1) {
+  --r: 0deg;
+  top: 50%;
+  left: 50%;
+}
+.neon-checkbox__sparks span:nth-child(2) {
+  --r: 90deg;
+  top: 50%;
+  left: 50%;
+}
+.neon-checkbox__sparks span:nth-child(3) {
+  --r: 180deg;
+  top: 50%;
+  left: 50%;
+}
+.neon-checkbox__sparks span:nth-child(4) {
+  --r: 270deg;
+  top: 50%;
+  left: 50%;
+}
+
+/* Ring Delays */
+.neon-checkbox__rings .ring:nth-child(1) {
+  animation-delay: 0s;
+}
+.neon-checkbox__rings .ring:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.neon-checkbox__rings .ring:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.navlist li a.active {
+  background-color: #00ffaa; /* or any color you want */
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+/* From Uiverse.io by R5Program */
+/* Container for loader */
+.loader {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+/* Individual squares */
+.loader-square {
+  --primary: hsl(var(--theme-primary));
+  --primary-dark: hsl(var(--theme-primary) / 0.8);
+  --primary-light: hsl(var(--theme-primary) / 0.4);
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 4px;
+  box-shadow: 0 0 12px hsl(var(--theme-primary) / 0.4);
+  animation: scaleBounce 1.2s infinite ease-in-out;
+  position: relative;
+}
+
+/* Splash effect */
+.loader-square::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(var(--theme-primary) / 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1);
+  animation: splash 1.2s infinite ease-in-out;
+}
+
+/* Animations for each square */
+.loader-square:nth-child(1) {
+  animation-delay: -0.4s;
+}
+.loader-square:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.loader-square:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes scaleBounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.5);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes splash {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+  /* From Uiverse.io by gharsh11032000 */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid hsl(var(--theme-primary));
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.3em;
+  width: 1.3em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: hsl(var(--theme-primary));
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider {
+  box-shadow: 0 0 20px hsl(var(--theme-primary));
+  border: 2px solid hsl(var(--theme-primary));
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
